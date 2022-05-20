@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   final int days = 30;
-    final String S = "Srivathsa";
+  final String S = "Srivathsa";
  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("MUTILVERSE CATALOG"),
+        title: Text("MUTILVERSE CATALOG"), 
       ),
       body: Center(
           child: Container(
