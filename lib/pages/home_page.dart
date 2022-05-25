@@ -11,7 +11,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("MUTILVERSE CATALOG"), 
+        title: const Text("MUTILVERSE CATALOG",
+        style: TextStyle(
+          color: Colors.white,
+        ),), 
       ),
       body: Center(
           child: Text("the multiverse is ver $days welcome $S "),
