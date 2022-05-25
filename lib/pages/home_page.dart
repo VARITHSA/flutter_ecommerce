@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/drawer.dart';
+
 class HomePage extends StatelessWidget {
   final int days = 30;
   final String S = "Srivathsa";
@@ -12,11 +14,9 @@ class HomePage extends StatelessWidget {
         title: Text("MUTILVERSE CATALOG"), 
       ),
       body: Center(
-          child: Container(
-            child: Text("the multiverse is ver $days welcome $S "),
-          ),
+          child: Text("the multiverse is ver $days welcome $S "),
         ),
-        drawer: Drawer(),
+        drawer: const MyDrawer(),
       );
       
     
