@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 
 import '../widgets/drawer.dart';
@@ -11,9 +13,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Colors.white,
-        // elevation: 0.0,
-        // iconTheme: const IconThemeData(color: Colors.black),
         title: const Text(
           "MUTILVERSE CATALOG",
           style: TextStyle(
@@ -22,7 +21,9 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Text("the multiverse is ver $days welcome $S "),
+        child: Container(
+          child: Text("the multiverse is ver $days welcome $S ")
+          ),
       ),
       drawer: const MyDrawer(),
     );
