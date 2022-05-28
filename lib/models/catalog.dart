@@ -1,14 +1,5 @@
 class MangaModel {
-  static final items = [
-    Item(
-        id: 001,
-        name: "Onepiece",
-        disc: "The pirate story of being king of pirates.",
-        price: 100,
-        color: "#33505a",
-        image:
-            "https://static.wikia.nocookie.net/onepiece/images/c/c6/Volume_100.png/revision/latest/scale-to-width-down/1000?cb=20210903160940"),
-  ];
+  static List<Item> items=[];
 }
 
 class Item {
@@ -26,4 +17,23 @@ class Item {
       required this.price,
       required this.color,
       required this.image});
+
+  factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+        id: map["id"],
+        name: map["name"],
+        disc: map["disc"],
+        price: map["price"],
+        color: map["color"],
+        image: map["image"]);
+  }
+
+  toMap() => {
+        "id": id,
+        "name": name,
+        "disc": disc,
+        "price": price,
+        "color": color,
+        "image": image,
+      };
 }

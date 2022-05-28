@@ -1,19 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'dart:convert';
 import 'package:intro/models/catalog.dart';
 import 'package:intro/widgets/item_widget.dart';
 
 import '../widgets/drawer.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   static String routeName = "/homescreen";
-  final int days = 30;
-  final String S = "Srivathsa";
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   get buildcontext => null;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    loadData();
+  }
+
+  loadData() async {
+    final catalogJson =
+        await rootBundle.loadString("assets/files/catalog.json");
+    final decodeData = jsonDecode(catalogJson);
+    var productsData = decodeData["products"];
+    MangaModel.items =
+        List.from(productsData).map((item) => Item.fromMap(item)).toList();
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
-    final dummyList = List.generate(10, ((index) => MangaModel.items[0]));
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -26,13 +46,12 @@ class HomePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView.builder(
-            itemCount: dummyList.length,
+            itemCount: MangaModel.items.length,
             itemBuilder: (context, index) {
               return itemWidget(
-                item: dummyList[index],
+                item: MangaModel.items[index],
               );
-            }
-          ),
+            }),
       ),
       drawer: const MyDrawer(),
     );
