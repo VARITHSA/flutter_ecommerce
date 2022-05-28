@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:intro/pages/home_page.dart';
 import 'package:intro/utils/routes.dart';
+
 class LoginPage extends StatefulWidget {
+  static String routeName = "/loginscreen";
+  const LoginPage({Key? key}) : super(key: key);
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -17,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
         changeButton = true;
       });
       await Future.delayed(const Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoutes.homeRoute);
+      await Navigator.pushNamed(context, HomePage.routeName);
       setState(() {
         changeButton = false;
       });
@@ -61,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: "Username",
                         ),
                         validator: (value) {
-                          if (value!.isEmpty ) {
+                          if (value!.isEmpty) {
                             return "Username cannot be empty";
                           }
 
@@ -81,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                         validator: (value) {
                           if (value!.isEmpty) {
                             return "Password cannot be empty";
-                          } else if (value.isEmpty &&value.length < 6) {
+                          } else if (value.isEmpty && value.length < 6) {
                             return "Password length should be atleast 6";
                           }
 
@@ -126,4 +131,3 @@ class _LoginPageState extends State<LoginPage> {
         ));
   }
 }
-

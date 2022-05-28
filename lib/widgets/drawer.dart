@@ -1,10 +1,8 @@
-// ignore_for_file: unused_local_variable, prefer_const_declarations, avoid_unnecessary_containers
-
-
+// ignore_for_file: prefer_const_declarations
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:intro/pages/home_page.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -45,8 +43,7 @@ class MyDrawer extends StatelessWidget {
                    ),
                 ),
                  const ListTile(
-                  leading:Icon(CupertinoIcons.home,color: Colors.white,
-                  ),
+                  leading:Icon(CupertinoIcons.home,color: Colors.white),
                   title: Text(
                     "Home",
                     textScaleFactor: 1.2,
@@ -57,6 +54,7 @@ class MyDrawer extends StatelessWidget {
                 ),
                 const ListTile(
                   leading:Icon(CupertinoIcons.profile_circled,color: Colors.white,),
+
                   title: Text(
                     "Profile",
                     textScaleFactor: 1.2,
