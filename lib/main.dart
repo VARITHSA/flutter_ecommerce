@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: Mytheme.lightTheme(context),
       darkTheme: Mytheme.darkTheme(context),
       
-      initialRoute: LoginPage.routeName,
+      initialRoute: HomePage.routeName,
       routes: path,
       debugShowCheckedModeBanner: false,
     );

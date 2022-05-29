@@ -45,13 +45,47 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ListView.builder(
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 15,
+            crossAxisSpacing: 12,
+            ),
             itemCount: MangaModel.items.length,
             itemBuilder: (context, index) {
-              return itemWidget(
-                item: MangaModel.items[index],
+              final item = MangaModel.items[index];
+              return Card(
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)
+                  ),
+                child: GridTile(
+                  header: Container(
+                    child: Text(
+                      item.name,
+                    style: TextStyle(color:Colors.white),
+                    ),
+                    padding: const EdgeInsets.all(11),
+                    decoration: const BoxDecoration(
+                      color: Colors.deepPurple
+                    ),),
+                  footer: Container(
+                    child: Text(
+                      item.price.toString(),
+                    style: TextStyle(color:Colors.white),
+                    ),
+                    padding: const EdgeInsets.all(11),
+                    decoration: const BoxDecoration(
+                      color: Colors.black
+                    ),),
+                  child:Image.network(
+                    item.image,
+                    ),
+                  ),
               );
-            }),
+            },
+          ),
+      
       ),
       drawer: const MyDrawer(),
     );
