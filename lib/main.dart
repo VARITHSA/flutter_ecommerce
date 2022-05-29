@@ -1,4 +1,4 @@
-// ignore_for_file: dead_code, unused_label
+
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: Mytheme.lightTheme(context),
       darkTheme: Mytheme.darkTheme(context),
       
-      initialRoute: HomePage.routeName,
+      initialRoute: LoginPage.routeName,
       routes: path,
       debugShowCheckedModeBanner: false,
     );
