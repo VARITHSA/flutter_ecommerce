@@ -7,7 +7,7 @@ class Mytheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
       primarySwatch: Colors.deepPurple,
       fontFamily: GoogleFonts.poppins().fontFamily,
-      primaryTextTheme: GoogleFonts.poppinsTextTheme(),
+      // primaryTextTheme: GoogleFonts.poppinsTextTheme(),
       appBarTheme: AppBarTheme(
         color: Colors.white,
         elevation: 0.0,

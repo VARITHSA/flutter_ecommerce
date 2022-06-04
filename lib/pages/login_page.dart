@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intro/pages/home_page.dart';
 import 'package:intro/utils/routes.dart';
 
@@ -47,10 +48,11 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Text(
                   "Welcome $name",
-                  style: const TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style:  TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: GoogleFonts.satisfy().fontFamily
+                     ),
                 ),
                 const SizedBox(
                   height: 20.0,

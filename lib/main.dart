@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intro/pages/home_page.dart';
@@ -13,7 +11,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  
+
   get initialRoute => null;
 
   @override
@@ -22,8 +20,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: Mytheme.lightTheme(context),
       darkTheme: Mytheme.darkTheme(context),
-      
-      initialRoute: HomePage.routeName,
+      initialRoute: LoginPage.routeName,
       routes: path,
       debugShowCheckedModeBanner: false,
     );
